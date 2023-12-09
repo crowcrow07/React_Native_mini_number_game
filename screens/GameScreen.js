@@ -1,9 +1,11 @@
 import { View, Text, StyleSheet } from "react-native";
 
+import Title from "../components/Title";
+
 export default function GameScreen() {
   return (
     <View style={styles.screen}>
-      <Text>숫자 추측</Text>
+      <Title>숫자 추측</Title>
       <View>
         <Text>위 아래</Text>
       </View>
