@@ -8,6 +8,7 @@ import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
+import GuessLogItem from "../components/game/GuessLogItem";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -64,6 +65,8 @@ export default function GameScreen({ userNumber, onGameOver, onGuessCount }) {
     setCurrentGuess(newRndNumber);
   }
 
+  const guessRoundListLength = guessRounds.length;
+
   return (
     <View style={styles.screen}>
       <Title>숫자 추측</Title>
@@ -85,12 +88,17 @@ export default function GameScreen({ userNumber, onGameOver, onGuessCount }) {
           </View>
         </View>
       </Card>
-      <View>
+      <View style={styles.listContainer}>
         <FlatList
           data={guessRounds}
           keyExtractor={(item) => item}
           renderItem={(guessRound) => {
-            return <Text>{guessRound.item}</Text>;
+            return (
+              <GuessLogItem
+                roundNumber={guessRoundListLength - guessRound.index}
+                guess={guessRound.item}
+              />
+            );
           }}
         />
       </View>
@@ -111,5 +119,9 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 16,
   },
 });
