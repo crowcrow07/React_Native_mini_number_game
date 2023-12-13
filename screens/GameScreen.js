@@ -86,9 +86,6 @@ export default function GameScreen({ userNumber, onGameOver, onGuessCount }) {
         </View>
       </Card>
       <View>
-        {/* {guessRounds.map((guessRound) => (
-          <Text key={guessRound}>{guessRound}</Text>
-        ))} */}
         <FlatList
           data={guessRounds}
           keyExtractor={(item) => item}
