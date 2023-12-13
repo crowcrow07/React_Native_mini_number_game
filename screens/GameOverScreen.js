@@ -5,7 +5,11 @@ import PrimaryButton from "../components/ui/PrimaryButton";
 
 import { Colors } from "../constants/colors";
 
-export default function GameOverScreen() {
+export default function GameOverScreen({
+  userNumber,
+  guessCount,
+  onStartNewGame,
+}) {
   return (
     <View style={styles.rootContainer}>
       <Title>GAME OVER!</Title>
@@ -16,10 +20,11 @@ export default function GameOverScreen() {
         />
       </View>
       <Text style={styles.summaryText}>
-        당신의 휴대폰은 <Text style={styles.highlight}>?</Text>회만에{" "}
-        <Text style={styles.highlight}>??</Text>를 맞췄습니다.
+        휴대폰이 계산한 횟수 :{" "}
+        <Text style={styles.highlight}>{guessCount}</Text>회 {"\n"}
+        당신의 숫자 : <Text style={styles.highlight}>{userNumber}</Text>
       </Text>
-      <PrimaryButton>Start New Game</PrimaryButton>
+      <PrimaryButton onPress={onStartNewGame}>Start New Game</PrimaryButton>
     </View>
   );
 }
