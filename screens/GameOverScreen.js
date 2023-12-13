@@ -24,7 +24,7 @@ export default function GameOverScreen({
         <Text style={styles.highlight}>{guessCount}</Text>회 {"\n"}
         당신의 숫자 : <Text style={styles.highlight}>{userNumber}</Text>
       </Text>
-      <PrimaryButton onPress={onStartNewGame}>Start New Game</PrimaryButton>
+      <PrimaryButton onPress={onStartNewGame}>재시작!</PrimaryButton>
     </View>
   );
 }
