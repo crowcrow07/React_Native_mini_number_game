@@ -59,14 +59,16 @@ export default function GameScreen({ userNumber, onGameOver }) {
       <Title>숫자 추측</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <InstructionText>업 다운?</InstructionText>
-        <View style={styles.buttonContainer}>
-          <View style={styles.button}>
+        <InstructionText style={styles.instructionText}>
+          업 다운?
+        </InstructionText>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
             <PrimaryButton onPress={() => nextGuessHandler("lower")}>
               -
             </PrimaryButton>
           </View>
-          <View style={styles.button}>
+          <View style={styles.buttonContainer}>
             <PrimaryButton onPress={() => nextGuessHandler("greater")}>
               +
             </PrimaryButton>
@@ -83,11 +85,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
   },
-  buttonContainer: {
-    flexDirection: "row",
-    marginTop: 20,
+  instructionText: {
+    marginBottom: 12,
   },
-  button: {
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
     flex: 1,
   },
 });
