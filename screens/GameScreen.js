@@ -68,11 +68,11 @@ export default function GameScreen({ userNumber, onGameOver }) {
 
   return (
     <View style={styles.screen}>
-      <Title>숫자 추측</Title>
+      <Title>당신의 숫자는?</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
         <InstructionText style={styles.instructionText}>
-          업 다운?
+          UP? & DOWN?
         </InstructionText>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>

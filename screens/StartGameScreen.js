@@ -32,7 +32,7 @@ export default function StartGameScreen({ onPickNumber }) {
 
   return (
     <View style={styles.rootContainer}>
-      <Title>숫자 추측하기</Title>
+      <Title>UP & DOWN 게임</Title>
       <Card>
         <InstructionText>숫자를 입력해주세요</InstructionText>
         <TextInput
@@ -46,10 +46,10 @@ export default function StartGameScreen({ onPickNumber }) {
         />
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={resetInputHander}>Reset</PrimaryButton>
+            <PrimaryButton onPress={resetInputHander}>리셋</PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+            <PrimaryButton onPress={confirmInputHandler}>확인</PrimaryButton>
           </View>
         </View>
       </Card>
