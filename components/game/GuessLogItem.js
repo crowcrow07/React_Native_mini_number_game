@@ -5,7 +5,7 @@ export default function GuessLogItem({ roundNumber, guess }) {
   return (
     <View style={styles.listItem}>
       <Text style={styles.itemText}>#{roundNumber}</Text>
-      <Text style={styles.itemText}>계산 횟수 : {guess}</Text>
+      <Text style={styles.itemText}>추측한 수 : {guess}</Text>
     </View>
   );
 }
