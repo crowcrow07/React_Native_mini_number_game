@@ -91,8 +91,9 @@ export default function GameScreen({ userNumber, onGameOver, onGuessCount }) {
         ))} */}
         <FlatList
           data={guessRounds}
+          keyExtractor={(item) => item}
           renderItem={(guessRound) => {
-            return <Text key={guessRound.item}>{guessRound.item}</Text>;
+            return <Text>{guessRound.item}</Text>;
           }}
         />
       </View>
